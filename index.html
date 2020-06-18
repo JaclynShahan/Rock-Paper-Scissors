@@ -1,0 +1,42 @@
+<script>
+    let playerSelection = prompt("Rock, Paper, or Scissors?")
+
+    let computerSelection = Math.Random()
+    if (computerSelection <= 0.3) {
+        computerSelection = "rock"
+    } else if (computerSelection > 0.3 && computerSelection <= 0.6) {
+        computerSelection = "Paper"
+    } else {
+        computerSelection = "Scissors"
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+            return "It\'s a tie!"
+        }
+        if (playerSelection === "rock") {
+            if (computerSelection === "scissors") {
+                return "You win!"
+            } else {
+                return "You lose! Try again!"
+            }
+        }
+        if (playerSelection === "paper") {
+            if (computerSelection === "rock") {
+                return "You win!"
+            } else {
+                return "You lose. Try again!"
+            }
+        }
+        if (playerSelection === "scissors") {
+            if (computerSelection === "rock") {
+                return "You lose. Try again!"
+            } else {
+                return "You win!"
+            }
+        }
+    }
+    console.log("Your choice is: " + playerSelection)
+    console.log("Computer choice is: " + computerSelection)
+    playRound(playerSelection, computerSelection)
+</script>
